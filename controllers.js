@@ -122,7 +122,7 @@ function dateCtrl($scope) {
 function WeatherCtrl($scope, $resource, $timeout) {
 
 	$scope.weather = $resource('http://api.openweathermap.org/data/2.5/:action',
-		{action: 'weather', q: weatherParams.q, units: weatherParams.units, lang: weatherParams.lang, callback: 'JSON_CALLBACK'},
+		{action: 'weather', q: weatherParams.q, appid: weatherParams.appid, units: weatherParams.units, callback: 'JSON_CALLBACK'},
 		{get:{method:'JSONP'}});
 
 	// get the current weather data
@@ -144,7 +144,6 @@ function WeatherCtrl($scope, $resource, $timeout) {
 				$scope.weatherNow.sun.nextStatus = 'rise';
 				$scope.weatherNow.sun.nextStatusTime = weatherNow.sys.sunrise;
 			}
-
 		});
 		$timeout(currWeather, weatherParams.weatherRefresh);  // refresh every 10 minutes
 	};

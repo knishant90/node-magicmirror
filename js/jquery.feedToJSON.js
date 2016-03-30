@@ -8,10 +8,11 @@
 			  callback = options;
 			  options = null;
 			}
+			console.log("----------->It reaches here")
 			options = $.extend($.feedToJson.defaults,options);
 			var url = options.yqlURL + options.yqlQS + "'" + encodeURIComponent(options.feed) + "'" + "&_nocache=" + options.cacheBuster;
 			return $.getJSON(url, function(data){  
-					//console.log(data.query.results);
+					console.log(data.query.results);
 					data = data.query.results;
 					$.isFunction(callback) && callback(data); //allows the callback function to be the only option
 					$.isFunction(options.success) && options.success(data);
