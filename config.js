@@ -6,7 +6,7 @@ var lang = window.navigator.language;
 //change weather params here:
 var weatherParams = {
     'q': 'Gig Harbor,Washington',
-    'units': 'metric',
+    'units': 'imperial',
     'appid':'8606389960787055c4f6e57f0b496407',
     'lang': lang,
     'weatherRefresh': 60000,  // duration to refresh the current weather  // 1 min

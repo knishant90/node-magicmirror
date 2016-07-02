@@ -113,7 +113,7 @@ function dateCtrl($scope) {
 	setInterval(function() {
        $scope.$apply(function() {
           $scope.currDate = new Date();
-       });
+	   });
     }, 1000);
 }
 
